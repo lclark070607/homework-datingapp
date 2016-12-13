@@ -1,0 +1,12 @@
+li {
+    list-style-type: none;
+    margin: 20px 0;
+    color: white;
+    text-shadow: 2px 2px black;
+    
+}
+.profile {
+    background-color: orangered;
+    padding: 25px;
+}
+
