@@ -9,54 +9,56 @@ function init() {
 
     function sayNope() {
         let textBox = 'Nope';
-        console.log('user has been noped!')
+        console.log('user has been noped!');
     }
 
-    function createProfile() {
-        console.log('click');
-    }
+    function addAnother()  {
+        let ul = document.getElementById('list');
+        let li = document.createElement('li');
+        // let children = ul.children + 1;
+        // li.setAttribute("id", "element" + children)
+        li.appendChild(document.createTextNode('Profile Name'));
+        ul.appendChild(li)
+        console.log(ul.children + 1);
+}
 
-    let buttonHeader = document.querySelector('#add');
-    buttonHeader.addEventListener('click', createProfile);
-        
-
-    // document.body.onload = addElement;
-
-    //found this strategy here: https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
-    // function addElement () {
-    //     let newLi = document.createElement('li');
-    //     let newProfile = document.create
-    //     newLi.appendChild(newProfile);
-    //     let currentDiv = document.getElementById('li1');
-    //     document.body.insertBefore(newLi, newProfile);
+    
+    // function addProfile() {
+    //     let newProfile = document.createElement('li');
+    //     console.log(newProfile);
     // }
-
-    //Create a new li
-
-
-
-    let child = document.createElement('li');
-    let parent = document.querySelector('#list');
-    parent.appendChild(child);
+    
+    // let buttonHeader = document.querySelector('#add');
+    // buttonHeader.addEventListener('click', createProfile);
 
 
-    // let header = document.createElement('h2'); 
-    // header.textContent = 'BoBo Bear';
-    // child.appendChild(header);
-    // header.addEventListener('click', function () {
-    // console.log('Do you fold laundry?')
-    // });
+    //2. Create a new <li>
+    let child = document.createElement('li'); 
 
-    // let buttonLike = document.createElement('button');
-    // buttonLike.addEventListener('click', sayLike);
+    let header = document.createElement('h2'); 
+     header.textContent = 'BoBo Bear';
+     child.appendChild(header);
+     header.addEventListener('click', function () {
+     console.log('Do you fold laundry?')
+    });
+    
+    let buttonLike = document.createElement('button');
+    buttonLike.addEventListener('click', sayLike);
+    
+    let parent = document.querySelector('#list'); //<the ul>
+    parent.appendChild(child); //add the child element to the parent
+
+    window.addEventListener('load', init);
+}
 
     // let buttonNope = document.createElement('button');
     // buttonNope.addEventListener('click', sayNope);
 
-};
-
-
-window.addEventListener('load', init);
+// let button = document.querySelector('#Like');
+    // button.textContent = 'Like';
+    // child.appendChild(button);
+    // button.addEventListener('click', sayNope);
+    // }
 
 //make class faded, add class faded to it in javascript
 //class=faded
